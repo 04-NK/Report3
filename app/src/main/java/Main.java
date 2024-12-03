@@ -2,19 +2,19 @@ import jp.ac.uryukyu.ie.e245746.*;
 
 public class Main {
     public static void main(String[] args){
-        Hero hero = new Hero("勇者", 10, 5);
+        Warrior warrior = new Warrior("勇者", 10, 5);
         Enemy enemy = new Enemy("スライム", 6, 3);
-        System.out.println("名前: " + hero.getName());
-        System.out.println("HP: " + hero.getHitPoint());
-        System.out.println("攻撃力: " + hero.getAttack());
-        System.out.printf("%s vs. %s\n", hero.getName(), enemy.getName());
+        System.out.println("名前: " + warrior.getName());
+        System.out.println("HP: " + warrior.getHitPoint());
+        System.out.println("攻撃力: " + warrior.getAttack());
+        System.out.printf("%s vs. %s\n", warrior.getName(), enemy.getName());
 
         int turn = 0;
-        while( hero.isDead() == false && enemy.isDead() == false ){
+        while( warrior.isDead() == false && enemy.isDead() == false ){
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
-            hero.attack(enemy);
-            enemy.attack(hero);
+            warrior.attackWithWeponSkill(enemy);
+            enemy.attack(warrior);
         }
         System.out.println("戦闘終了");
     }
